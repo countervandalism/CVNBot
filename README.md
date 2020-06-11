@@ -28,30 +28,33 @@ For more information on SemVer, please visit https://semver.org/.
 
 Build
 ----------
-The software is written in C# and originally created as a Visual Studio Project.
-We use `mono` to run the executable and `msbuild` to build the executable.
+The software is written in C#.
+
+Supported runtimes:
+* Mono **6.8**
+* .NET Core **3.1**
 
 Recommended installation methods:
 
 * For Linux, install [`mono-complete`](https://packages.debian.org/search?keywords=mono-complete) from Debian, or [latest from mono-project.com](https://www.mono-project.com/download/stable/#download-lin),
-* For Mac, install [Visual Studio for Mac](https://www.visualstudio.com/vs/visual-studio-mac/) (enable Mono and .NET during installation).
-* For Windows, install [Visual Studio](https://visualstudio.microsoft.com/vs/) (enable Mono and .NET during installation).
+* For Mac, install [Visual Studio for Mac](https://www.visualstudio.com/vs/visual-studio-mac/) (enable Mono and .NET during installation), or for command-line see [monodevelop.com](https://www.monodevelop.com/download/).
+* For Windows, install [Visual Studio](https://visualstudio.microsoft.com/vs/) (enable Mono and .NET during installation) or for command-line see [monodevelop.com](https://www.monodevelop.com/download/).
 
-For standalone command-line installations on Mac or Windows, see [monodevelop.com](https://www.monodevelop.com/download/).
+Then use your IDE to open, build and run the project. Or, if using the command line:
 
-Currently supported versions of Mono: **6.8**
-
-Once mono is installed, build the project. The below uses Debug, for local development. (See [Installation](./docs/install.md) for how to install it in production):
+Build:
 
 ```bash
 countervandalism/CVNBot:$ msbuild src/CVNBot.sln /p:Configuration=Debug
 ```
 
-Once built, you can run it:
+Run:
+
 ```bash
-countervandalism/CVNBot/src/CVNBot/bin/Debug:$ mono CVNBot.exe
+countervandalism/CVNBot:$ mono src/CVNBot/bin/Debug/CVNBot.exe
 ```
 
+The above is for targetting local development, see [Installation](./docs/install.md) for the recommended way to run CVNBot in production.
 
 Bug tracker
 -----------
